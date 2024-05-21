@@ -117,12 +117,12 @@ makeId <- function(x) {
 `%inT%` <- function(x, table) {
   if (!is.null(table) && ! "" %in% table) {
     sapply(X = x, FUN = function(i) {
-      count <- 0
-      for(var in table){
-        count <- count + grepl(var, i)
-      }
-      count > 0
-      # sum(grepl(paste0(table, collapse = "|"), i, fixed = TRUE)) > 0
+      # count <- 0
+      # for(var in table){
+      #   count <- count + grepl(var, i)
+      # }
+      # count > 0
+     sum(grepl(paste0(table, collapse = "|"), i, fixed = TRUE)) > 0
     }, USE.NAMES = FALSE)
   } else {
     rep_len(TRUE, length(x))
